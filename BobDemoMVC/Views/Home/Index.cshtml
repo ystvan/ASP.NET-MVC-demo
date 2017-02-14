@@ -1,0 +1,32 @@
+﻿@*This View is bound, it is looking for a model of type List<Car>. And then we can pass an instance of
+    List<Car> into the View theough using the View() helper method.
+
+    Lower case 'm-model' is used here as a directive, saying this is what the type of this view will be.
+*@
+
+@model List<BobDemoMVC.Models.Car>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Istvan Changed this</h2>
+<h3>Hello again</h3>
+
+@*Referencing the viewBag by referencing it, what we created in the controller, we can inject into the
+    view by using the ViewBag
+*@
+
+<p>@ViewBag.MyMethod</p>
+
+@*strongly typed model
+
+    We are able to access that List<Car> using the Model (capital M) => is the ACCESSOR, this is how
+    actually get the instance of the Model that was passed in.
+
+*@
+
+@foreach (var car in @Model)
+{
+    <p>@car.Id - @car.Make - @car.Model</p>
+}
+
