@@ -87,9 +87,18 @@
 
 <p>
     Mrs. President, there
+    
+    @*after the @Tag everything is considered to be C# unless there is an html opening/closing tag! or @:
+        
+        Escaping: @ 2 times (@@)!
+        
+        in reserved C# words: single @ , like // new { @class = "navbar-brand" } //
+        
+    *@
+
     @if (crisesCount == 1)
     {
-        <span>is one crisis</span>
+        @:is one crisis
     }
     else
     {
